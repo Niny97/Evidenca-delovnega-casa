@@ -1,0 +1,27 @@
+<div class="date">
+    <input type="date" [(ngModel)]="selectedDate">
+    <button (click)="refreshDate()">Search date</button>
+</div>
+
+<table>
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Name</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.from }}</td>
+        <td>{{ user.to }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.comment }}</td>
+      </tr>
+    </tbody>
+  </table>

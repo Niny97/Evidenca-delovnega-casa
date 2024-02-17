@@ -1,0 +1,22 @@
+<div class="search">
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search.." name="search">
+  <button type="submit">Submit</button>
+</div>
+
+<table>
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

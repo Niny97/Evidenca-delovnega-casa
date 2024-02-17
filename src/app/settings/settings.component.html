@@ -1,0 +1,13 @@
+<form (submit)="getToken()">
+    <fieldset>
+        <legend>Login Information</legend>
+            <div>
+              <label for="clientId">Client id: </label>
+              <input type="text" id="clientId" [(ngModel)]="clientId" name="clientId" required /><br><br>
+              <label for="clientSecret">Client secret: </label>
+              <input type="password" id="clientSecret" [(ngModel)]="clientSecret" name="clientSecret" required /><br><br>
+              <button type="submit">Submit</button>
+            </div>
+    </fieldset>
+</form>
+
