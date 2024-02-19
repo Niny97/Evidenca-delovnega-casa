@@ -13,13 +13,18 @@ import { UsersComponent } from './users/users.component';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { AbsencesComponent } from './absences/absences.component.js';
+import { AddUserComponent } from './add-user/add-user.component.js';
+import { AddAbsenceComponent } from './add-absence/add-absence.component.js';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AbsencesComponent,
     SettingsComponent,
-    UsersComponent
+    UsersComponent,
+    AddUserComponent,
+    AddAbsenceComponent
   ],
   imports: [
     BrowserModule,

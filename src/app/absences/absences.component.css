@@ -4,3 +4,35 @@
     width: 50%;
     text-align: center;
 }
+
+.search {
+    margin: auto;
+    padding: 30px;
+    width: 50%;
+    text-align: center;
+}
+
+input {
+    padding: 8px;
+}
+
+button {
+    padding: 9px;
+}
+
+table {
+    border: 1px solid;
+    width: 50%;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid;
+    padding: 10px;
+}
+
+div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}

@@ -1,0 +1,17 @@
+<div class="modal">
+    <form #userForm="ngForm">
+        <label>Add New User</label><br>
+        <label for="firstName">First Name: </label>
+        <input type="text" #firstNameInput [(ngModel)]="userData.FirstName" required name="firstName"/>
+        
+        <label for="lastName">Last Name: </label>
+        <input type="text" #lastNameInput id="lastName" name="lastName" [(ngModel)]="userData.LastName" required /><br><br>
+        
+        <label for="email">Email: </label>
+        <input type="text" #emailInput id="email" name="email" [(ngModel)]="userData.Email" required /><br><br>
+    
+    </form>
+        <button class="left" (click)="onClose()">Close</button>
+        <button class="right" (click)="addNewUser()">Confirm</button>
+    
+</div>

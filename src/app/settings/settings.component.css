@@ -1,0 +1,35 @@
+form {
+    width: 40%;
+    margin: auto;
+    padding: 40px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 30px);
+    gap: 8px;
+    padding: 5px;
+}
+
+.item {
+    grid-column: 2 / span 2;
+}
+
+label {
+    grid-column: 1 / span 1;
+    text-align: left;
+}
+
+button {
+    grid-row: 5;
+    grid-column: 2;
+}
+
+.hidden {
+    grid-row: 5;
+    grid-column: 3;
+    color: green;
+}

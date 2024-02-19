@@ -1,19 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-users',
-  //tandalone: true,
-  //imports: [],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
 export class UsersComponent implements OnInit {
   users: any[] = [];
+  selectedUser: any;
+
   searchQuery: string = '';
-  //filteredUsers: any[] = [];
+  showModal = false;
+  showAbsenceModal = false;
+  showTooltip = false;
 
   constructor(private http: HttpClient) {}
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
+  openAbsenceModal(user: any) {
+    this.selectedUser = user;
+    this.showAbsenceModal = true;
+    //console.log(user);
+  }
+
+  closeAbsenceModal() {
+    this.showAbsenceModal = false;
+  }
 
   ngOnInit(): void {
     const accesToken = localStorage.getItem('access_token');
@@ -23,13 +44,12 @@ export class UsersComponent implements OnInit {
   }
 
   getUserData(accessToken: string): void {
-    console.log('Access Token:', accessToken);
     const headers = new HttpHeaders({ Authorization: `Bearer ${accessToken}`,
                       'Content-Type': 'application/json'});
     this.http.get<any[]>('https://api4.allhours.com/api/v1/Users', { headers }).subscribe(
 
       (data) => {
-        this.users = data;
+        //this.users = data;
         
         this.users = data.map(user => ({
           
@@ -38,7 +58,6 @@ export class UsersComponent implements OnInit {
           lastName: user.LastName,
           email: user.Email 
         }));
-        
       }
     )
   }
@@ -57,4 +76,5 @@ export class UsersComponent implements OnInit {
       user.lastName.toLowerCase().includes(query1[1])
     );
   }
+
 }

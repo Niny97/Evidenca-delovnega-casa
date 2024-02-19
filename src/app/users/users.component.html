@@ -1,7 +1,10 @@
 <div class="search">
-  <input type="text" [(ngModel)]="searchQuery" placeholder="Search.." name="search">
-  <button type="submit">Submit</button>
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search User.." name="search">
+  <br><br><button (click)="openModal()">Add New User</button>
 </div>
+
+<add-user *ngIf="showModal" (close)="closeModal()"></add-user>
+<add-absence *ngIf="showAbsenceModal" [selectedUser]="selectedUser" (close2)="closeAbsenceModal()"></add-absence>
 
 <table>
     <thead>
@@ -12,11 +15,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of filteredUsers">
+      <tr class="row" (click)="openAbsenceModal(user)" *ngFor="let user of filteredUsers" title="Add absence to user">
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
         <td>{{ user.email }}</td>
       </tr>
     </tbody>
-  </table>
+</table>
   

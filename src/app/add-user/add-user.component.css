@@ -1,0 +1,36 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(155, 151, 151);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+
+form {
+    display: grid;
+    padding: 10px 40px;
+}
+
+button.left {
+    float: left;
+}
+
+button.right {
+    float: right;
+}
+
+input {
+    padding: 8px;
+}
+
+button {
+    padding: 8px 24px;
+}
+
+*:required:invalid {
+    background-color: lightcoral;
+}

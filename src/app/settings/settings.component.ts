@@ -5,14 +5,12 @@ import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-settings',
-  //standalone: true,
-  //imports: [],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.css'
 })
 export class SettingsComponent {
 
-  
+  labelHidden: boolean = true;
   clientId: string = '';
   clientSecret: string = '';
   accessToken$: Observable<string> = of('');
@@ -33,10 +31,9 @@ export class SettingsComponent {
     this.http.post<any>('https://login.allhours.com/connect/token', payload.toString(), { headers }).subscribe(
       (response) => {
         const accessToken = response.access_token;
-        console.log('Access Token:', accessToken);
-        // Save the access token to local storage
+        
         localStorage.setItem('access_token', accessToken);
-        console.log(accessToken);
+        this.labelHidden = false;
       }
     );
   } 

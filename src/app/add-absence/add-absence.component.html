@@ -1,0 +1,23 @@
+<div class="modal">
+    <form #absenceForm="ngForm">
+        <label>Add Absence to User</label><br>
+        <label for="dateFrom">Date From: </label>
+        <input type="date" #dateFromInput [(ngModel)]="absenceData.PartialTimeFrom"  name="dateFrom"/>
+        
+        <label for="dateTo">Date To: </label>
+        <input type="date" #dateToInput id="dateTo" name="dateTo" [(ngModel)]="absenceData.PartialTimeTo"  /><br><br>
+        
+        <label for="selectedAbsence">Absence Type: </label>
+
+        <select #nameInput [(ngModel)]="selectedAbsenceId" name="name" required="">
+            <option *ngFor="let absence of absenceDef" [value]="absence.id">{{ absence.name }}</option>
+        </select>
+
+        <label for="comment">Comment: </label>
+        <input #commentInput type="text" #dateToInput id="comment" name="comment" [(ngModel)]="absenceData.Comment"/><br><br>
+
+    </form>
+        <button class="left" (click)="onClose()">Close</button>
+        <button class="right" (click)="addNewAbsence()">Confirm</button>
+    
+</div>
