@@ -34,3 +34,7 @@ button {
 *:required:invalid {
     background-color: lightcoral;
 }
+
+.hidden {
+    color: green;
+}

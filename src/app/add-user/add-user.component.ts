@@ -17,6 +17,8 @@ export class AddUserComponent {
   userData: any = {};
   inputFields: ElementRef[] = [];
 
+  labelHidden: boolean = true;
+
   today: Date = new Date();
   todaystring: string = this.today.toISOString().slice(0, 10);
 
@@ -60,6 +62,7 @@ export class AddUserComponent {
     this.http.post<any>('https://api4.allhours.com/api/v1/Users', this.userData, { headers }).subscribe(
       (response) => {
         console.log('New user added:', response);
+        this.labelHidden = false;
       }
     );
   }

@@ -8,8 +8,9 @@
         <input type="text" #lastNameInput id="lastName" name="lastName" [(ngModel)]="userData.LastName" required /><br><br>
         
         <label for="email">Email: </label>
-        <input type="text" #emailInput id="email" name="email" [(ngModel)]="userData.Email" required /><br><br>
+        <input type="text" #emailInput id="email" name="email" [(ngModel)]="userData.Email" required /><br>
     
+        <label class="hidden" [hidden]="labelHidden">New User Added.</label>
     </form>
         <button class="left" (click)="onClose()">Close</button>
         <button class="right" (click)="addNewUser()">Confirm</button>

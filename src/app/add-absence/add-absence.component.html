@@ -14,7 +14,9 @@
         </select>
 
         <label for="comment">Comment: </label>
-        <input #commentInput type="text" #dateToInput id="comment" name="comment" [(ngModel)]="absenceData.Comment"/><br><br>
+        <input #commentInput type="text" #dateToInput id="comment" name="comment" [(ngModel)]="absenceData.Comment"/><br>
+
+        <label class="hidden" [hidden]="labelHidden">Absence Added to User.</label>
 
     </form>
         <button class="left" (click)="onClose()">Close</button>

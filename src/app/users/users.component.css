@@ -21,7 +21,7 @@ button, input {
     display: grid;
     grid-auto-flow: column; 
     width: 50%;
-    padding: 40px;
+    padding: 60px;
 }
 
 .row {
