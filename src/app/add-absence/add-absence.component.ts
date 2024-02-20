@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, Output, ElementRef, ViewChild } from '@
 import { v4 as uuidv4 } from 'uuid';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
-import * as moment from 'moment';
 //import { error } from 'console';
 
 @Component({
