@@ -1,9 +1,5 @@
 import { Component, EventEmitter, Input, Output, ElementRef, ViewChild } from '@angular/core';
-// @ts-ignore
-import { v4 as uuidv4 } from 'uuid';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
-import * as moment from 'moment';
 //import { error } from 'console';
 
 @Component({
@@ -16,6 +12,8 @@ export class AddAbsenceComponent {
   @Output() close2 = new EventEmitter<void>();
 
   @ViewChild('nameInput') nameInput!: ElementRef;
+
+  labelHidden: boolean = true;
 
   absenceData: any = {};
   from: string = "";
@@ -59,6 +57,7 @@ export class AddAbsenceComponent {
     this.http.post<any>('https://api4.allhours.com/api/v1/Absences', this.absenceData, { headers }).subscribe(
       (response) => {
         console.log('New absence added:', response);
+        this.labelHidden = false;
       }
     );
     
