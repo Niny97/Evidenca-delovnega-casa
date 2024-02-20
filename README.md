@@ -2,19 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
 
+## Setup
+
+Angular requires Node.js and npm to be installed. [Official Node.js website](https://nodejs.org/en)
+
+To install the Angular CLI, open a terminal and run `npm install -g @angular/cli`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build --base-href .` to build the project. Move to the output location (`dist\zaposleni`).
+There you can run a python server to run the app (`python -m http.server 8000`).
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
